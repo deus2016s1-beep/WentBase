@@ -4,7 +4,10 @@
   "private": true,
   "main": "dist-electron/main.js",
   "scripts": {
-    "dev": "concurrently \"vite\" \"wait-on tcp:5173 && electron .\"",
+    "dev": "concurrently -k \"npm:dev:renderer\" \"npm:dev:electron:build\" \"npm:dev:electron:run\"",
+    "dev:renderer": "vite",
+    "dev:electron:build": "tsc -p electron/tsconfig.json --watch --preserveWatchOutput",
+    "dev:electron:run": "wait-on tcp:5173 file:dist-electron/main.js && electron .",
     "build": "vite build && tsc -p electron/tsconfig.json",
     "typecheck": "tsc --noEmit"
   },
