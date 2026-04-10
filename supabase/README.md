@@ -1,5 +1,20 @@
 # Supabase schema notes (MVP)
 
+## Как применить `supabase/schema.sql` в Supabase проекте
+
+1. Создайте проект в Supabase.
+2. Откройте **SQL Editor**.
+3. Скопируйте содержимое `supabase/schema.sql`.
+4. Выполните скрипт целиком (Run).
+5. Проверьте:
+   - появились таблицы `profiles`, `projects`, `project_estimates`, `client_payments`, `project_expenses`, `cash_journal`;
+   - включены RLS-политики;
+   - существует trigger `on_auth_user_created`.
+6. В Authentication -> Users создайте пользователей (Камал/Руслан).
+7. В таблице `profiles` выставьте роли:
+   - Камал -> `admin`
+   - Руслан -> `viewer`
+
 ## Какие таблицы хранить как сущности
 
 Отдельные сущности (храним как таблицы):

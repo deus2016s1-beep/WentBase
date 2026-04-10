@@ -1,6 +1,8 @@
 export type UserRole = 'admin' | 'viewer';
 
 export type AuthUser = {
-  name: string;
+  id: string;
+  email: string;
+  fullName: string;
   role: UserRole;
 };

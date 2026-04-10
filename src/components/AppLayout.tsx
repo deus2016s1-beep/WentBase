@@ -17,8 +17,15 @@ export const AppLayout = () => {
           WindBase
         </Link>
         <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
-          <span>{user?.name} ({user?.role})</span>
-          <button type="button" onClick={logout}>Выйти</button>
+          <span>{user?.fullName} ({user?.role})</span>
+          <button
+            type="button"
+            onClick={() => {
+              void logout();
+            }}
+          >
+            Выйти
+          </button>
         </div>
       </header>
 
